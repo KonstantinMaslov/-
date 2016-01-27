@@ -11,6 +11,8 @@ namespace WindowsFormsApplication1
 {
     public partial class MainForm : Form
     {
+        int count = 0;
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,12 +30,30 @@ namespace WindowsFormsApplication1
 
         private void помощьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void tsmiAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Программа мои утилиты содержит ряд небольших программ,\n которые могут пригодиться в жизни.\n А главное - научить меня основам программирования на С#.\n Автор Маслов Константин Игоревич/n NotCopyright", "О программе");
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            count++;
+            lblCount.Text = count.ToString();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            count--;
+            lblCount.Text = count.ToString();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            count=0;
+            lblCount.Text = Convert.ToString(count);
         }
     }
 }
